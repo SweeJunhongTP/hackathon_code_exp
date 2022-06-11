@@ -9,19 +9,84 @@ import HomeScreen from './src/components/HomeScreen';
 import Applyleave from './src/components/Applyleave';
 import ApproveLeave from './src/components/ApproveLeave';
 import ViewCalendarScreen from './src/components/ViewCalendarScreen';
-
+import SignUp from './src/components/SignUp';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer >
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{
+        headerStyle: { elevation: 0 },
+        cardStyle: { backgroundColor: '#F4FBFF'}
+      }}>
         {/* <Stack.Screen options={{headershown:false}} name="Login" component={LoginScreen}/> */}
-        <Stack.Screen name="Login" component={LoginScreen}/>
-        <Stack.Screen name="Home" component={HomeScreen}/>
-        <Stack.Screen name="ViewCalendar" component={ViewCalendarScreen}/>
-        <Stack.Screen name="ApplyLeave" component={Applyleave}/>
-        <Stack.Screen name="ApproveLeave" component={ApproveLeave}/>
+        <Stack.Screen name="Login" component={LoginScreen}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="Sign Up" component={SignUp}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="Dashboard" component={HomeScreen}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="ViewCalendar" component={ViewCalendarScreen}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="ApplyLeave" component={Applyleave}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="ApproveLeave" component={ApproveLeave}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

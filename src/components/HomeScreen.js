@@ -23,24 +23,28 @@ const HomeScreen = () => {
           <Text style ={styles.buttonText}>Sign out</Text>
       </TouchableOpacity> */}
       
+      <View>
+        <Text style={styles.welcome}> Welcome to Smart RO!</Text>
+    </View>
+
     <TouchableOpacity style={styles.button}
     onPress={() => navigation.navigate('ViewCalendar')}>
-        <Text>View Calendar</Text>
+        <Text style ={styles.buttonText}>View Calendar</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.button}
     onPress={() => navigation.navigate('ApplyLeave')}>
-        <Text>Apply for Leave</Text>
+        <Text style ={styles.buttonText}>Apply for Leave</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.button}
     onPress={() => navigation.navigate('ApproveLeave')}>
-        <Text>Approve Leave</Text>
+        <Text style ={styles.buttonText}>Approve Leave</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.button}
+    <TouchableOpacity style={styles.buttonsignout}
       onPress={()=>navigation.navigate("Login")}>
-          <Text style ={styles.buttonText}>Sign out</Text>
+          <Text style ={styles.signoutText}>Sign out</Text>
       </TouchableOpacity>
     </View>
   )
@@ -52,12 +56,26 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor: '#F4FBFF'
+    },
+    welcome: {
+        fontSize: 32,
+        fontWeight: '600',
+        color: '#8D8D8D'
     },
     button:{
-        backgroundColor:'#0782F9',
+        backgroundColor:'#75C6EE',
         width:'60%',
-        padding: 15,
+        padding: 30,
+        borderRadius: 10,
+        alignItems: 'center',
+        marginTop: 40,
+    },
+    buttonsignout:{
+        backgroundColor:'#75C6EE',
+        width:'30%',
+        padding:25,
         borderRadius: 10,
         alignItems: 'center',
         marginTop: 40,
@@ -65,7 +83,12 @@ const styles = StyleSheet.create({
     buttonText:{
         color: 'white',
         fontWeight: '700',
-        fontSize: 16
+        fontSize: 28
+    },
+    signoutText:{
+        color: 'white',
+        fontWeight: '700',
+        fontSize: 24
     }
 
 })
