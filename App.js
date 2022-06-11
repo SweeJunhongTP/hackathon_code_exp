@@ -87,6 +87,17 @@ export default function App() {
             fontSize: 24
           },
         }} />
+        <Stack.Screen name="SignUp" component={SignUp}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
