@@ -1,22 +1,14 @@
 import { KeyboardAvoidingView, StyleSheet, Text, View, Image, } from 'react-native'
 import React, { useState, useEffect, Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-web'
-import { auth } from '../../firebase'
+
 import { useNavigation } from '@react-navigation/core'
+import { auth } from '../../firebase'
 
-
-const LoginScreen = () => {
+export default function LoginScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSignUp = () => {
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(userCredentails => {
-        const user = userCredentails.user;
-        console.log(user.email);
-      })
-      .catch(error => alert(error.message))
-  }
   const handleLogin = () => {
     auth.signInWithEmailAndPassword(email, password)
       .then(userCredentails => {
@@ -26,14 +18,14 @@ const LoginScreen = () => {
       .catch(error => alert(error.message))
   }
   const navigation = useNavigation()
-  // useEffect(()=>{
-  //    const unsubscribe = auth.onAuthStateChanged(user=>{
-  //         if(user){
-  //             navigation.replace("Home")
-  //         }
-  //     })
-  //     return unsubscribe
-  // },[])
+  useEffect(()=>{
+     const unsubscribe = auth.onAuthStateChanged(user=>{
+          if(user){
+              navigation.replace("Dashboard")
+          }
+      })
+      return unsubscribe
+  },[])
   return (
 
     <KeyboardAvoidingView
@@ -65,15 +57,15 @@ const LoginScreen = () => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          //onPress={handleLogin}
-          onPress={() => navigation.navigate('Dashboard')}
+          onPress={handleLogin}
+         // onPress={() => navigation.navigate('Dashboard')}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          //onPress={handleSignUp}
-          onPress={() => navigation.navigate('SignUp')}
+          onPress={()=>navigation.navigate('SignUp')}
+          
           style={[styles.button, styles.buttonOutline]}
         >
           <Text style={styles.buttonOutlineText}>Sign Up</Text>
@@ -84,7 +76,7 @@ const LoginScreen = () => {
 }
 
 
-export default LoginScreen
+
 
 const styles = StyleSheet.create({
   container1: {

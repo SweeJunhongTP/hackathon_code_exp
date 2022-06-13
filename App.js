@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,6 +10,11 @@ import Applyleave from './src/components/Applyleave';
 import ApproveLeave from './src/components/ApproveLeave';
 import ViewCalendarScreen from './src/components/ViewCalendarScreen';
 import SignUp from './src/components/SignUp';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
+
 
 const Stack = createNativeStackNavigator();
 export default function App() {

@@ -6,24 +6,26 @@ import firebase from 'firebase/compat/app'; //v9
 //to use auth
 
 import 'firebase/compat/auth'; //v9
+import 'firebase/compat/firestore';
+import {getFirestore} from 'firebase/firestore';
 
-//to use firestore
 
-import 'firebase/compat/firestore'; //v9
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+const app = firebase.initializeApp({
   apiKey: "AIzaSyCYK4Hrr1PZs-pjb6LDziqFyqb95ckvU9Q",
   authDomain: "hackathon-code-exp.firebaseapp.com",
   projectId: "hackathon-code-exp",
   storageBucket: "hackathon-code-exp.appspot.com",
   messagingSenderId: "363519501675",
   appId: "1:363519501675:web:17140154d73b41fd6bd82e"
-};
+});
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth()
-export {auth}; 
+
+export const auth = firebase.auth(app);
+export const db = getFirestore(app);
+
+
+export default app; 

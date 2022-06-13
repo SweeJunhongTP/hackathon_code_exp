@@ -1,12 +1,37 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native-web'
-import { auth } from '../../firebase'
+
 import {useNavigation} from '@react-navigation/core'
 import { Calendar } from 'react-native-calendars';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth ,db} from '../../firebase';
 
-const HomeScreen = () => {
+
+export default function HomeScreen() {
     const navigation = useNavigation()
+    const [user, setUser] = useState(null)
+
+
+const getUser = async () => {
+  try {
+    
+    const documentSnapshot = await getDoc(doc(db,'Users',auth.currentUser.uid))
+    const userData = documentSnapshot.data();
+   // console.log(userData)
+    setUser(userData);
+
+  } catch (error){
+    //do whatever
+    alert(error.message)
+  }
+};
+
+// Get user on mount
+useEffect(() => {
+  getUser();
+}, []);
+
     const handleSignOut = () =>{
         auth
         .signOut()
@@ -15,8 +40,11 @@ const HomeScreen = () => {
         })
         .catch(error => alert(error.message))
     }
+
   return (
     <View style={styles.container}>
+        
+         <Text>{user && user?.fullName}</Text>
     {/* <Text>Email: {auth.currentUser?.email}</Text>
       <TouchableOpacity style={styles.button}
       onPress={handleSignOut}>
@@ -43,14 +71,13 @@ const HomeScreen = () => {
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.buttonsignout}
-      onPress={()=>navigation.navigate("Login")}>
+      onPress={() => handleSignOut()}>
           <Text style ={styles.signoutText}>Sign out</Text>
       </TouchableOpacity>
     </View>
   )
 }
 
-export default HomeScreen
 
 const styles = StyleSheet.create({
     container:{

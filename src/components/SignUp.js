@@ -1,12 +1,69 @@
 import { KeyboardAvoidingView, StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-web'
-import { auth } from '../../firebase'
+import {auth, db} from '../../firebase'
+import 'firebase/compat/firestore';
+import { doc, setDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/core'
-
-const SignUp = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+export default function SignUp() {
+   
+    function handleChange(text,eventName){
+        setValues(prev=>{
+            return{
+                ...prev,
+                [eventName]:text
+            }
+        })
+    }
+    const[values, setValues] = useState({
+        email:'',
+        password:'',
+        confirmPwd:'',
+        role:'',
+        fullName:'',
+    })
+    const navigation = useNavigation()
+    const Register=()=> {
+        // const myDoc = doc(db,"Users","MyDoc")
+        // const DocData ={
+        //     "name":"testuser",
+        //     "role" :"test"
+        // }
+        
+        // setDoc(myDoc,DocData).then(()=>{
+        //     alert("document added successfully")
+        // })
+        // .catch((error)=>{
+        //     alert(error.message)
+        // })
+        const {email, password,confirmPwd,fullName,role} = values
+    
+        if (password == confirmPwd){
+            auth.createUserWithEmailAndPassword(email, password)
+            //   .then(()=>{
+            //     console.log(auth.currentUser.uid);
+            //     db.collection("Users").doc(auth.currentUser.uid).set({
+            //         uid: auth.currentUser.uid,
+            //         fullName,
+            //         role,
+            //         email
+            //     })
+            //   })
+            .then(()=>{
+                setDoc(doc(db, "Users",auth.currentUser.uid),{
+                    uid: auth.currentUser.uid,
+                    fullName,
+                    role,
+                    email
+                })
+                navigation.replace("Dashboard")
+            })
+          
+              .catch(error => console.log(error.message))
+              
+          }
+    }
 
     return (
         <KeyboardAvoidingView
@@ -15,42 +72,55 @@ const SignUp = () => {
             <View style={styles.container}>
                 <TextInput
                     placeholder="Enter New Email"
-                    value={email}
-                    onChangeText={text => setNewEmail(text)}
+                   
+                    onChangeText={text => handleChange(text,"email")}
+                    style={styles.input}
+                />
+            </View>
+            <View style={styles.container}>
+                <TextInput
+                    placeholder="Enter Your Fullname"
+                   
+                    onChangeText={text => handleChange(text,"fullName")}
+                    style={styles.input}
+                />
+            </View>
+            <View style={styles.container}>
+                <TextInput
+                    placeholder="Role"
+                 
+                    onChangeText={text => handleChange(text,"role")}
                     style={styles.input}
                 />
             </View>
             <View style={styles.container}>
                 <TextInput
                     placeholder="Enter New Password"
-                    value={password}
-                    onChangeText={text => setNewPassword(text)}
+                  
+                    onChangeText={text => handleChange(text,"password")}
                     style={styles.input}
                 />
             </View>
             <View style={styles.container}>
                 <TextInput
                     placeholder="Confirm New Password"
-                    value={password}
-                    onChangeText={text => setNewPassword(text)}
+                  
+                    onChangeText={text => handleChange(text,"confirmPwd")}
                     style={styles.input}
                 />
             </View>
             <TouchableOpacity
                 //onPress={handleSignUp}
-                onPress={() => navigation.navigate('SignUp')}
+                onPress={() => Register()}
                 style={[styles.button, styles.buttonOutline]}
             >
                 <Text style={styles.buttonOutlineText}>Sign Up</Text>
             </TouchableOpacity>
         </KeyboardAvoidingView>
-
-
-
     )
 }
 
-export default SignUp
+
 
 const styles = StyleSheet.create({
     wholecontainer: {

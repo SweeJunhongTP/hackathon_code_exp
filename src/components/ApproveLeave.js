@@ -3,16 +3,10 @@ import React from 'react'
 import Svg, { Ellipse } from "react-native-svg";
 
 
-function ApproveLeave(props) {
+export default function  ApproveLeave(props) {
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
-      <View style={styles.rect}>
-        <View style={styles.loremIpsum14Row}>
-          <Text style={styles.loremIpsum14}>🡰</Text>
-          <Text style={styles.loremIpsum}>View Leave Application</Text>
-        </View>
-      </View>
+
       <View style={styles.rect2Stack}>
         <View style={styles.rect2}>
           <View style={styles.rect3}>
@@ -440,4 +434,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default ApproveLeave
+
