@@ -47,7 +47,7 @@ export default function HomeScreen() {
     return (
         <View style={styles.container}>
 
-            <Text>{user && user?.fullName}</Text>
+            <Text style={styles.welcome}>{user && user?.fullName}</Text>
             {/* <Text>Email: {auth.currentUser?.email}</Text>
      */}
 
@@ -115,12 +115,12 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: '700',
-        fontSize: 28
+        fontSize: 24
     },
     signoutText: {
         color: 'white',
         fontWeight: '700',
-        fontSize: 24
+        fontSize: 16
     }
 
 })
