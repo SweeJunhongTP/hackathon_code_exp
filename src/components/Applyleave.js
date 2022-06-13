@@ -5,6 +5,7 @@ import { KeyboardAvoidingView, TouchableOpacity } from 'react-native-web';
 
 
 export default function Applyleave() {
+
   return (
 
     <View style={styles.container1}>
