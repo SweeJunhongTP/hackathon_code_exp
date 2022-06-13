@@ -90,7 +90,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(244,251,255,1)",
     borderWidth: 0,
-    borderColor: "rgba(253,154,154,1)"
+    borderColor: "rgba(253,154,154,1)",
+    alignContent: 'left',
+    alignItems: 'left'
   },
   rect: {
     width: 361,
@@ -99,19 +101,25 @@ const styles = StyleSheet.create({
     borderRadius: 21,
     flexDirection: "row",
     marginTop: -33,
-    marginLeft: -1
+    marginLeft: -1,
+    justifyContent: 'center',
+    alignContent: 'left'
   },
   loremIpsum14: {
     fontFamily: "Arial-BoldMT",
     color: "rgba(253,252,252,1)",
-    fontSize: 35
+    fontSize: 35,
+    justifyContent: 'center',
+    alignContent: 'left'
   },
   loremIpsum: {
     fontFamily: "Arial-BoldMT",
     color: "rgba(255,255,255,1)",
     fontSize: 23,
     marginLeft: 16,
-    marginTop: 14
+    marginTop: 14,
+    justifyContent: 'center',
+    alignContent: 'left'
   },
   loremIpsum14Row: {
     height: 46,
@@ -119,7 +127,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 54,
     marginLeft: 19,
-    marginTop: 58
+    marginTop: 58,
+    justifyContent: 'center',
+    alignContent: 'left'
   },
   rect2: {
     top: 0,
@@ -130,7 +140,9 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.99)",
     borderWidth: 5,
     borderColor: "rgba(253,154,154,0.99)",
-    borderRadius: 19
+    borderRadius: 19,
+    justifyContent: 'top',
+    alignContent: 'left'
   },
   rect3: {
     width: 288,
@@ -138,7 +150,9 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(253,154,154,1)",
     borderWidth: 0,
     borderColor: "#000000",
-    borderRadius: 12
+    borderRadius: 12,
+    justifyContent: 'top',
+    alignContent: 'left'
   },
   pteEdisonLee: {
     fontFamily: "Arial-BoldMT",

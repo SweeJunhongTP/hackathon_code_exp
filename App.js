@@ -59,7 +59,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="ViewCalendar" component={ViewCalendarScreen}
+        <Stack.Screen name="View Calendar" component={ViewCalendarScreen}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
@@ -70,7 +70,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="ApplyLeave" component={Applyleave}
+        <Stack.Screen name="Apply for Leave" component={Applyleave}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
@@ -81,7 +81,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="ApproveLeave" component={ApproveLeave}
+        <Stack.Screen name="Leave Approval" component={ApproveLeave}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',

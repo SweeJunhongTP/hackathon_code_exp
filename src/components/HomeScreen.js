@@ -44,29 +44,30 @@ useEffect(() => {
   return (
     <View style={styles.container}>
         
-         <Text>{user && user?.fullName}</Text>
-    {/* <Text>Email: {auth.currentUser?.email}</Text>
-      <TouchableOpacity style={styles.button}
-      onPress={handleSignOut}>
-          <Text style ={styles.buttonText}>Sign out</Text>
-      </TouchableOpacity> */}
       
       <View>
         <Text style={styles.welcome}> Welcome to Smart RO!</Text>
     </View>
 
+    <Text style={styles.welcome}>{user && user?.fullName}</Text>
+    {/* <Text>Email: {auth.currentUser?.email}</Text>
+      <TouchableOpacity style={styles.button}
+      onPress={handleSignOut}>
+          <Text style ={styles.buttonText}>Sign out</Text>
+      </TouchableOpacity> */}
+
     <TouchableOpacity style={styles.button}
-    onPress={() => navigation.navigate('ViewCalendar')}>
+    onPress={() => navigation.navigate('View Calendar')}>
         <Text style ={styles.buttonText}>View Calendar</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.button}
-    onPress={() => navigation.navigate('ApplyLeave')}>
+    onPress={() => navigation.navigate('Apply for Leave')}>
         <Text style ={styles.buttonText}>Apply for Leave</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.button}
-    onPress={() => navigation.navigate('ApproveLeave')}>
+    onPress={() => navigation.navigate('Leave Approval')}>
         <Text style ={styles.buttonText}>Approve Leave</Text>
     </TouchableOpacity>
 
@@ -89,7 +90,8 @@ const styles = StyleSheet.create({
     welcome: {
         fontSize: 32,
         fontWeight: '600',
-        color: '#8D8D8D'
+        color: '#8D8D8D',
+        justifyContent: "center"
     },
     button:{
         backgroundColor:'#75C6EE',
@@ -110,12 +112,14 @@ const styles = StyleSheet.create({
     buttonText:{
         color: 'white',
         fontWeight: '700',
-        fontSize: 28
+        fontSize: 24,
+        justifyContent: "center"
     },
     signoutText:{
         color: 'white',
         fontWeight: '700',
-        fontSize: 24
+        fontSize: 18,
+        justifyContent: "center"
     }
 
 })
