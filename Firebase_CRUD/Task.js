@@ -1,4 +1,4 @@
-// import './task.css'
+import './task.css'
 import {useState} from 'react'
 import TaskItem from './TaskItem'
 import EditTask from './EditTask'
