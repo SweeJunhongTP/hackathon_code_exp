@@ -75,8 +75,8 @@ const ViewCalendarScreen = () => {
           '2022-06-08': [{
             name: '0530: Reveille'
           },
-          { name: '0545: Fall in, light exercises and running' },
-          { name: '0600: Breakfast (March to the cookhouse' },
+          { name: '0545: Fall in, Light Exercises and Running' },
+          { name: '0600: Breakfast (March to the cookhouse)' },
           { name: '0630: Area Cleaning, Admin Time' },
           { name: '0715: First Parade' },
           { name: '0730: Initial Inspection' },
