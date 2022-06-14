@@ -1,8 +1,9 @@
 import './task.css'
-import {useState} from 'react'
+import {View } from 'react-native'
+import React ,{useState,useEffect} from 'react'
 import TaskItem from './TaskItem'
-import { doc, updateDoc, deleteDoc} from "firebase/firestore";
-import { db } from '../firebase'
+import { doc, updateDoc, deleteDoc, getDoc} from "firebase/firestore";
+import { db, auth } from '../firebase'
 
 function Task({id, startdate, remarks, status, duration, overseas,country}) {
 
@@ -19,31 +20,58 @@ function Task({id, startdate, remarks, status, duration, overseas,country}) {
     try{
       await updateDoc(taskDocRef, {
         status: checked
-       
       } )
     } catch (err) {
       alert(err)
     }
     
   }
+  const [user, setUser] = useState(null)
+  const getUser = async () => {
+    try {
+        const documentSnapshot = await getDoc(doc(db, 'Users', auth.currentUser.uid))
+        const userData = documentSnapshot.data();
+        // console.log(userData)
+        setUser(userData);
+        const isAdmin = userData.role == 'Admin'
+        if(isAdmin){
+         setShowResults(true)
+        }        
+    } catch (error) {
+        //do whatever
+        alert(error.message)
+    }
+};
 
-
+// Get user on mount
+useEffect(() => {
+    getUser()
+  
+}, []);
+const [showResults, setShowResults] = React.useState(false)
 
   return (
     <div className={`task ${checked && 'task--borderColor'}`}>
-      <div>
-        <input 
-          id={`checkbox-${id}`} 
-          className='checkbox-custom'
-          name="checkbox" 
-          checked={checked}
-          onChange={handleChange}
-          type="checkbox" />
-        <label 
+      
+        {showResults ? (
+          <div>
+
+            <input
+              id={`checkbox-${id}`}
+              className='checkbox-custom'
+              name="checkbox"
+              checked={checked}
+              onChange={handleChange}
+              type="checkbox" />
+          <label 
           htmlFor={`checkbox-${id}`} 
           className="checkbox-custom-label" 
           onClick={() => setChecked(!checked)} ></label>
       </div>
+
+        ) : null}
+
+       
       <div className='task__body'>
         <h2>Apply for (date): {startdate}</h2>
         <p>Remarks: {remarks}</p>

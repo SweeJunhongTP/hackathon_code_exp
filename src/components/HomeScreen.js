@@ -64,7 +64,10 @@ export default function HomeScreen() {
                 onPress={() => navigation.navigate('Apply for Leave')}>
                 <Text style={styles.buttonText}>Apply for Leave</Text>
             </TouchableOpacity>
-
+            <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate('View Leave')}>
+                <Text style={styles.buttonText}>view status</Text>
+            </TouchableOpacity>
            
                     {showResults ?(
                          <TouchableOpacity style={styles.button}

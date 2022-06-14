@@ -14,6 +14,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import TaskManager from './Firebase_CRUD/TaskManager'
+import ViewApplicationStatus from './src/components/ViewApplicationStatus';
 
 
 
@@ -84,6 +85,17 @@ export default function App() {
           },
         }} />
         <Stack.Screen name="Leave Approval" component={TaskManager}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+                <Stack.Screen name="View Leave" component={ViewApplicationStatus}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',

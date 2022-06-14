@@ -33,7 +33,7 @@ function TaskManager() {
             <Task
               id={task.id}
               key={task.id}
-              status={task.status}
+              status={task.data.status}
               duration={task.data.duration}
               country={task.data.country}
               overseas={task.data.overseas}
