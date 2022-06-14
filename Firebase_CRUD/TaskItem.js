@@ -1,6 +1,6 @@
 import Modal from "./Modal"
-import { StyleSheet, Text, View, TextInput } from 'react-native'
-//import './taskItem.css'
+
+import './taskItem.css'
 
 function TaskItem({onClose, open, startdate, remarks,duration,overseas,country}) {
 

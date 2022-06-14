@@ -1,4 +1,4 @@
-//import './Amodal.css'
+import './Amodal.css'
 
 function AModal({open, modalLable, children, custom_modal, onClose}) {
 

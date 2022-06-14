@@ -41,7 +41,7 @@ const handleSubmit = () => {
         status:false,
     })   
      alert("Applied successful")
-    navigation.replace("Dashboard")
+    navigation.replace("Home")
  
 }
 

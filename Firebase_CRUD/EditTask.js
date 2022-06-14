@@ -1,7 +1,8 @@
 import Modal from "./Modal"
 import {useState} from 'react'
-import { StyleSheet, Text, View, TextInput } from 'react-native'
-// import styles from './editTask.css'
+
+import './editTask.css'
+
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 

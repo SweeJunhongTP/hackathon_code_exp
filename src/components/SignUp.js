@@ -35,7 +35,7 @@ export default function SignUp() {
                     role:'User',
                     email
                 })
-                navigation.replace("Dashboard")
+                navigation.replace("Home")
             })
           
               .catch(error => console.log(error.message))
@@ -63,14 +63,7 @@ export default function SignUp() {
                     style={styles.input}
                 />
             </View>
-            <View style={styles.container}>
-                <TextInput
-                    placeholder="Role"
-                 
-                    onChangeText={text => handleChange(text,"role")}
-                    style={styles.input}
-                />
-            </View>
+   
             <View style={styles.container}>
                 <TextInput
                     placeholder="Enter New Password"

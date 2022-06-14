@@ -67,7 +67,7 @@ export default function CommanderLogin() {
             
             {/* Sign up as commander*/}
             <TouchableOpacity
-              onPress={()=>navigation.navigate('Comm Register')}
+              onPress={()=>navigation.navigate('Commander Register')}
               style={styles.button}
             >
               <Text style={styles.buttonText}>Com Sign Up</Text>
