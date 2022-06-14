@@ -66,7 +66,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => navigation.navigate('Leave Application Status')}>
-                <Text style={styles.buttonText}>Leave Application Status</Text>
+                <Text style={styles.signoutText}>Leave Application Status</Text>
             </TouchableOpacity>
            
 
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: '700',
-        fontSize: 24
+        fontSize: 20
     },
     signoutText: {
         color: 'white',
