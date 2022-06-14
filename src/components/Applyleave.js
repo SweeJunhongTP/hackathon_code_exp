@@ -4,6 +4,10 @@ import { KeyboardAvoidingView, TouchableOpacity } from 'react-native-web';
 import { doc, addDoc,setDoc,collection ,Timestamp} from 'firebase/firestore';
 import {auth, db} from '../../firebase'
 import { useNavigation } from '@react-navigation/core'
+
+
+
+
 export default function Applyleave() {
   const navigation = useNavigation()
   function handleChange(text,eventName){
