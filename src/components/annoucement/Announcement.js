@@ -1,4 +1,4 @@
-//import './announcement.css'
+import './announcement.css'
 import {View } from 'react-native'
 import React ,{useState,useEffect} from 'react'
 import AnnouncementItem from './AnnouncementItem'

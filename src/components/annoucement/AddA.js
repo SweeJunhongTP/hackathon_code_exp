@@ -1,6 +1,6 @@
 import Modal from './AModal'
 import {useState} from 'react'
-//import './addA.css'
+import './addA.css'
 import { auth, db } from '../../../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
 

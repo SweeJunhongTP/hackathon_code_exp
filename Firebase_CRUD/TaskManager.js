@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../firebase'
 import { StyleSheet } from 'react-native-web'
-//import style from './taskManager.css';
+import  './taskManager.css';
 
 function TaskManager() {
 
@@ -25,10 +25,10 @@ function TaskManager() {
   }, [])
 
   return (
-    <div style={style.taskManager}>
-      <div style={style.taskManager__container}>
+    <div className='taskManager'>
+      <div className='taskManager__container'>
 
-        <div style={style.taskManager__tasks}>
+        <div className='taskManager__tasks'>
 
           {tasks.map((task) => (
             <Task

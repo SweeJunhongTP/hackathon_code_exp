@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import './viewAppstatus.css'
-//import Task from '../../Firebase_CRUD/Task'
+import Task from '../../Firebase_CRUD/Task'
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../../firebase'
@@ -23,10 +23,10 @@ export default function ViewApplicationStatus() {
     }, [])
   
     return (
-      <div className='taskManager'>
-        <div className='taskManager__container'>
+      <div className='viewApplication'>
+        <div className='viewApplication__container'>
   
-          <div className='taskManager__tasks'>
+          <div className='viewApplication__task'>
   
             {tasks.map((task) => (
               <Task

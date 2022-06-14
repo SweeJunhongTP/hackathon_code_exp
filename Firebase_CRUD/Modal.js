@@ -1,4 +1,4 @@
-//import styles from'./modal.css'
+import './modal.css'
 
 function Modal({open, modalLable, children, custom_modal, onClose}) {
 
@@ -11,7 +11,7 @@ function Modal({open, modalLable, children, custom_modal, onClose}) {
 
   if(open) {
     return (
-      <div style={styles.modalContainer} onClick={handleClose}>
+      <div className='modalContainer' onClick={handleClose}>
         <div className= {`modal ${custom_modal}`}>
           <div className='modal__head'>
             <h2>{modalLable}</h2>
