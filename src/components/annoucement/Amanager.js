@@ -17,7 +17,7 @@ function Amanager() {
         const userData = documentSnapshot.data();
         // console.log(userData)
         setUser(userData);
-        const isAdmin = userData.role == 'Admin'
+        const isAdmin = userData.role == 'Commander'
         if(isAdmin){
          setShowResults(true)
         }        
@@ -66,7 +66,6 @@ const [showResults, setShowResults] = useState(false)
               message={task.data.message}
               by={task.data.by}
               published={task.data.published}
-             
             />
           ))}
 

@@ -1,4 +1,4 @@
-import './annoucement.css'
+import './announcement.css'
 import {View } from 'react-native'
 import React ,{useState,useEffect} from 'react'
 import AnnouncementItem from './AnnouncementItem'
@@ -15,23 +15,10 @@ function Announcement({id, message, by, published}) {
     setOpen({edit:false, view:false})
   }
 
-  /* function to update firestore */
-  const handleChange = async () => {
-    const taskDocRef = doc(db, 'Annoucement', id)
-    try{
-      await updateDoc(taskDocRef, {
-        status: checked
-      } )
-    } catch (err) {
-      alert(err)
-    }
     
-  }
- 
   return (
-    <div>
-      
-       
+    
+    <div className='task--borderColor'>       
       <div className='task__body'>
         <h6>Published by: {by} : </h6>
         <p>Annoucement: {message}</p>
@@ -49,7 +36,6 @@ function Announcement({id, message, by, published}) {
           message={message} 
           by={by}
           published={published}
-       
           open={open.view} />
       }
 

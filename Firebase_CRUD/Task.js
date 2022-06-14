@@ -33,7 +33,7 @@ function Task({id, startdate, remarks, status, duration, overseas,country}) {
         const userData = documentSnapshot.data();
         // console.log(userData)
         setUser(userData);
-        const isAdmin = userData.role == 'Admin'
+        const isAdmin = userData.role == 'Commander'
         if(isAdmin){
          setShowResults(true)
         }        

@@ -1,11 +1,11 @@
 import { KeyboardAvoidingView, StyleSheet, Text, View, Image } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-web'
-import {auth, db} from '../../firebase'
+import { db, auth } from '../../../firebase';
 import 'firebase/compat/firestore';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigation } from '@react-navigation/core'
-export default function SignUp() {
+export default function CommanderRegiser() {
    
     function handleChange(text,eventName){
         setValues(prev=>{
@@ -19,6 +19,7 @@ export default function SignUp() {
         email:'',
         password:'',
         confirmPwd:'',
+        role:'',
         fullName:'',
     })
     const navigation = useNavigation()
@@ -32,10 +33,10 @@ export default function SignUp() {
                 setDoc(doc(db, "Users",auth.currentUser.uid),{
                     uid: auth.currentUser.uid,
                     fullName,
-                    role:'Commander',
+                    role,
                     email
                 })
-                navigation.replace("Dashboard")
+                navigation.replace("Commander Dashboard")
             })
           
               .catch(error => console.log(error.message))
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#F4FBFF'
+        backgroundColor: '#e6fcf4'
     },
     container: {
         width: '80%',

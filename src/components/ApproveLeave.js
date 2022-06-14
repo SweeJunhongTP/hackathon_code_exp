@@ -11,24 +11,6 @@ export default function  ApproveLeave(props) {
 const [userDoc, setUserDoc] = useState(null);
 
 
-//get collection data
-// async function read(){
-//   try{
-//      getDocs(colRef)
-// .then((snapshot)=>{
-//   //console.log(snapshot)
-//   let leavelist= []
-//   snapshot.docs.forEach((doc)=>{
-//     leavelist.push({...doc.data(),id:doc.id})
-//     setUserDoc(leavelist.map())
-//   })
-//   console.log(leavelist)
-// })
-//   }catch (error){
-//     alert(error)
-//   }
-
-// }
   useEffect(() => {
     const fetchLeaveList = async () => {
       const storeData = await getDoc(colRef)

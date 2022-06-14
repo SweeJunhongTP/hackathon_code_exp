@@ -16,8 +16,9 @@ import 'firebase/compat/firestore';
 import TaskManager from './Firebase_CRUD/TaskManager'
 import ViewApplicationStatus from './src/components/ViewApplicationStatus';
 import Amanager from './src/components/annoucement/Amanager';
-
-
+import CommanderRegiser from './src/components/Comander/CommanderRegister';
+import CommanderDashboard from './src/components/Comander/CommanderDashboard';
+import CommanderLogin from './src/components/Comander/CommanderLogin';
 
 
 const Stack = createNativeStackNavigator();
@@ -63,7 +64,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="Dashboard" component={HomeScreen}
+        <Stack.Screen name="Home" component={HomeScreen}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
@@ -108,10 +109,33 @@ export default function App() {
           },
         }} />
 
-        <Stack.Screen name="SignUp" component={SignUp}
+
+        <Stack.Screen name="Commander Register" component={CommanderRegiser}
         options = {{
           headerStyle: {
-            backgroundColor: '#75C6EE',
+            backgroundColor: '#013220',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="Commander Dashboard" component={CommanderDashboard}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#013220',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+         <Stack.Screen name="Commander Login" component={CommanderLogin}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#013220',
           },
           headerTintColor: 'white',
           headerTitleStyle:{

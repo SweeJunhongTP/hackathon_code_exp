@@ -14,18 +14,19 @@ export default function LoginScreen() {
       .then(userCredentails => {
         const user = userCredentails.user;
         console.log('logged in with', user.email);
+        navigation.replace("Home")
       })
       .catch(error => alert(error.message))
   }
   const navigation = useNavigation()
-  useEffect(()=>{
-     const unsubscribe = auth.onAuthStateChanged(user=>{
-          if(user){
-              navigation.replace("Dashboard")
-          }
-      })
-      return unsubscribe
-  },[])
+  // useEffect(()=>{
+  //    const unsubscribe = auth.onAuthStateChanged(user=>{
+  //         if(user){
+  //             navigation.replace("Dashboard")
+  //         }
+  //     })
+  //     return unsubscribe
+  // },[])
   return (
 
     <KeyboardAvoidingView
@@ -56,21 +57,33 @@ export default function LoginScreen() {
       </View>
 
       <View style={styles.buttonContainer}>
+      
+
+      
+    
+         {/* Create account for ns */}
         <TouchableOpacity
           onPress={handleLogin}
-         // onPress={() => navigation.navigate('Dashboard')}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={()=>navigation.navigate('SignUp')}
-          
           style={[styles.button, styles.buttonOutline]}
         >
-          <Text style={styles.buttonOutlineText}>Sign Up</Text>
+          <Text style={styles.buttonOutlineText}>NS Login</Text>
+        </TouchableOpacity>
+  {/* Create account for ns */}
+  <TouchableOpacity
+          onPress={()=>navigation.navigate('Sign Up')}
+          style={[styles.button, styles.buttonOutline]}>
+          <Text style={styles.buttonOutlineText}>NS Sign Up</Text>
         </TouchableOpacity>
       </View>
+
+
+      {/* Commander site*/}
+      <TouchableOpacity
+          onPress={()=>navigation.navigate('Commander Login')}
+         >
+          <Text style={styles.GoCommanderPage}>Com Login</Text>
+        </TouchableOpacity>
+        
     </KeyboardAvoidingView>
   )
 }
@@ -105,7 +118,7 @@ const styles = StyleSheet.create({
     //  marginTop: 5,
   },
   buttonContainer: {
-    width: '60%',
+    width: '40%',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
@@ -125,14 +138,20 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontWeight: '700',
+    fontWeight: '400',
     fontSize: 16,
   },
   buttonOutlineText: {
     color: '#75C6EE',
-    fontWeight: '700',
+    fontWeight: '500',
     fontSize: 16,
   },
+  GoCommanderPage:{
+    color:'#013220',
+   marginTop:25,
+    fontWeight: '500',
+    fontSize: 16,
+  }
 
 
 })
