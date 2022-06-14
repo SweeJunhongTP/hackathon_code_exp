@@ -96,18 +96,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="Leave Approval" component={TaskManager}
-        options = {{
-          headerStyle: {
-            backgroundColor: '#75C6EE',
-          },
-          headerTintColor: 'white',
-          headerTitleStyle:{
-            fontWeight: 'bold',
-            fontSize: 24
-          },
-        }} />
-                <Stack.Screen name="View Leave" component={ViewApplicationStatus}
+                <Stack.Screen name="Leave Application Status" component={ViewApplicationStatus}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',

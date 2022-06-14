@@ -68,16 +68,9 @@ export default function HomeScreen() {
                 <Text style={styles.buttonText}>Apply for Leave</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
-                onPress={() => navigation.navigate('View Leave')}>
-                <Text style={styles.buttonText}>view status</Text>
+                onPress={() => navigation.navigate('Leave Application Status')}>
+                <Text style={styles.signoutText}>Leave Application Status</Text>
             </TouchableOpacity>
-           
-                    {showResults ?(
-                         <TouchableOpacity style={styles.button}
-                         onPress={() => navigation.navigate('Leave Approval')}>
-                         <Text style={styles.buttonText}>Approve Leave</Text>
-                         </TouchableOpacity>
-                    ):null}
            
 
             <TouchableOpacity style={styles.buttonsignout}
@@ -121,7 +114,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontWeight: '700',
-        fontSize: 24
+        fontSize: 20
     },
     signoutText: {
         color: 'white',
