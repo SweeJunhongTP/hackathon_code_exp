@@ -35,7 +35,7 @@ export default function SignUp() {
                     role:'User',
                     email
                 })
-                navigation.replace("Dashboard")
+                navigation.replace("Home")
             })
           
               .catch(error => console.log(error.message))
