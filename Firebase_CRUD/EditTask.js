@@ -1,6 +1,7 @@
 import Modal from "./Modal"
 import {useState} from 'react'
-import styles from './editTask.css'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
+// import styles from './editTask.css'
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -37,3 +38,14 @@ function EditTask({open, onClose, toEditTitle, toEditDescription, id}) {
 }
 
 export default EditTask
+
+const styles = StyleSheet.create({
+    editTask: {
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        marginTop: "10px",
+        zIndex: 100
+      }
+    
+})

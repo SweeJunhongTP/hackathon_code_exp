@@ -1,6 +1,7 @@
 import Modal from './Modal'
 import {useState} from 'react'
-import './addTask.css'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
+// import './addTask.css'
 import { db } from '../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
 
@@ -33,7 +34,7 @@ function AddTask({onClose, open}) {
 
   return (
     <Modal modalLable='Apply Leave' onClose={onClose} open={open}>
-      <form onSubmit={handleSubmit} className='addTask' name='addTask'>
+      <form onSubmit={handleSubmit} style={styles.addTask} name='addTask'>
         <input 
           type='text' 
           name='startdate' 
@@ -71,3 +72,14 @@ function AddTask({onClose, open}) {
 }
 
 export default AddTask
+
+const styles = StyleSheet.create({
+        addTask: {
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+          marginTop: "10px",
+          zIndex: 100
+        },
+        
+})

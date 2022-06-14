@@ -1,5 +1,5 @@
 //import './task.css'
-import {View } from 'react-native'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React ,{useState,useEffect} from 'react'
 import TaskItem from './TaskItem'
 import { doc, updateDoc, deleteDoc, getDoc} from "firebase/firestore";

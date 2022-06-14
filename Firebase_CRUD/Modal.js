@@ -1,4 +1,5 @@
 //import styles from'./modal.css'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
 
 function Modal({open, modalLable, children, custom_modal, onClose}) {
 
@@ -12,10 +13,10 @@ function Modal({open, modalLable, children, custom_modal, onClose}) {
   if(open) {
     return (
       <div style={styles.modalContainer} onClick={handleClose}>
-        <div className= {`modal ${custom_modal}`}>
-          <div className='modal__head'>
+        <div style={styles.modal}>
+          <div style={styles.modal__head}>
             <h2>{modalLable}</h2>
-            <span className='modal__close' onClick={onClose}>x</span>
+            <span style={styles.modal__close} onClick={onClose}>x</span>
           </div>
           {children}
         </div>
@@ -26,3 +27,45 @@ function Modal({open, modalLable, children, custom_modal, onClose}) {
 }
 
 export default Modal
+
+const styles = StyleSheet.create({
+    modalContainer: {
+      position: "fixed",
+      width: "100vw",
+      height: "100%",
+      display: "flex",
+      top: "0",
+      bottom: "0",
+      left: "0",
+      right: "0",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "rgba(0, 0, 0, 0.2)"
+    },
+    modal: {
+      width: "90%",
+      maxWidth: "500px",
+      border: "5px",
+      padding: "20px",
+      backgroundColor: "white",
+      display: "flex",
+      flexDirection: "column",
+      alignContent: "space-between",
+      boxSizing: "border-box"
+    },
+    modal__head: {
+      display: "flex",
+      justifyContent: "space-between",
+      position: "relative"
+    },
+    modal__close: {
+      position: "absolute",
+      top: "0",
+      right: "0",
+      fontSize: "24px",
+      fontWeight: 500,
+      cursor: "pointer"
+    },
+    
+  
+})
