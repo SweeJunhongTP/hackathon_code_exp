@@ -13,6 +13,8 @@ import SignUp from './src/components/SignUp';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import TaskManager from './Firebase_CRUD/TaskManager'
+
 
 
 
@@ -25,7 +27,7 @@ export default function App() {
         headerStyle: { elevation: 0 },
         cardStyle: { backgroundColor: '#F4FBFF'}
       }}>
-        {/* <Stack.Screen options={{headershown:false}} name="Login" component={LoginScreen}/> */}
+        
         <Stack.Screen name="Login" component={LoginScreen}
         options = {{
           headerStyle: {
@@ -71,6 +73,17 @@ export default function App() {
           },
         }} />
         <Stack.Screen name="Apply for Leave" component={Applyleave}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+        <Stack.Screen name="firebaseCRUD" component={TaskManager}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',

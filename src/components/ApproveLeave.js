@@ -1,9 +1,50 @@
-import { StyleSheet, Text, View,StatusBar,  } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,StatusBar,  FlatList,  } from 'react-native'
+import { TextInput, TouchableOpacity } from 'react-native-web'
+import React, { useState, useEffect } from 'react'
 import Svg, { Ellipse } from "react-native-svg";
+import { collection, doc, getDoc, getDocFromCache, getDocs } from "firebase/firestore";
+import { db ,auth} from '../../firebase';
 
 
 export default function  ApproveLeave(props) {
+  const colRef = collection(db,'Leaves')
+const [userDoc, setUserDoc] = useState(null);
+
+
+//get collection data
+// async function read(){
+//   try{
+//      getDocs(colRef)
+// .then((snapshot)=>{
+//   //console.log(snapshot)
+//   let leavelist= []
+//   snapshot.docs.forEach((doc)=>{
+//     leavelist.push({...doc.data(),id:doc.id})
+//     setUserDoc(leavelist.map())
+//   })
+//   console.log(leavelist)
+// })
+//   }catch (error){
+//     alert(error)
+//   }
+
+// }
+  useEffect(() => {
+    const fetchLeaveList = async () => {
+      const storeData = await getDoc(colRef)
+      if (storeData) {
+        setUserDoc(storeData)
+      } else {
+        alert(Error);
+      }
+    }
+    fetchLeaveList()
+  },[])
+
+
+const update=()=>{
+
+}
   return (
     <View style={styles.container}>
 
@@ -82,7 +123,21 @@ export default function  ApproveLeave(props) {
           </View>
         </View>
       </View>
-    </View>
+    
+      <TouchableOpacity
+                //onPress={handleSignUp}
+                //onPress={read}
+                style={[styles.button, styles.buttonOutline]}
+            >
+                <Text style={styles.buttonOutlineText}>getLeaves</Text>
+            </TouchableOpacity>
+
+            <Text>
+              {userDoc.status}
+            </Text>
+
+            </View>
+
   );
 }
 const styles = StyleSheet.create({
@@ -93,6 +148,24 @@ const styles = StyleSheet.create({
     borderColor: "rgba(253,154,154,1)",
     alignContent: 'left',
     alignItems: 'left'
+  },
+  button: {
+    backgroundColor: '#0782F9',
+    width: '30%',
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  buttonOutline: {
+    backgroundColor: 'white',
+    marginTop: 35,
+    borderColor: '#0782F9',
+    borderWidth: 2,
+  },
+  buttonOutlineText: {
+    color: '#0782F9',
+    fontWeight: '700',
+    fontSize: 16,
   },
   rect: {
     width: 361,

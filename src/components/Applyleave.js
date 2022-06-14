@@ -1,12 +1,47 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { KeyboardAvoidingView, TouchableOpacity } from 'react-native-web';
-
-
-
+import { doc, addDoc,setDoc,collection ,Timestamp} from 'firebase/firestore';
+import {auth, db} from '../../firebase'
+import { useNavigation } from '@react-navigation/core'
 export default function Applyleave() {
+  const navigation = useNavigation()
+  function handleChange(text,eventName){
+    setValues(prev=>{
+        return{
+            ...prev,
+            [eventName]:text
+        }
+    })
+}
+const[values, setValues] = useState({
+    startdate:'',
+    duration:'',
+    overseas:'',
+    country:'',
+    remarks:''
+})
 
-  return (
+// function to add new task to firestore 
+const handleSubmit = () => {
+  const {startdate, duration, overseas, country, remarks,status} = values
+    addDoc(collection(db, "Leaves"),{
+        uid: auth.currentUser.uid,
+        fullName:auth.currentUser.email,
+        startdate,
+        duration,
+        overseas,
+        country,
+        remarks,
+        created: Timestamp.now(),
+        status:false,
+    })   
+     alert("Applied successful")
+    navigation.replace("Dashboard")
+ 
+}
+
+return (
 
     <View style={styles.container1}>
 
@@ -15,7 +50,7 @@ export default function Applyleave() {
 
         <View>
           <Text style={styles.startdate}>Starting date of Leave (DD/MM/YYYY):</Text>
-          <Text style={styles.leaveblank}>blank</Text>
+          <Text style={styles.leaveblank} >blank</Text>
           {//leaveblank is for spacing purposes
           }
         </View>
@@ -25,7 +60,9 @@ export default function Applyleave() {
           {//inputContainer is the physical rectangle
           }
           <TextInput
+          date
             placeholder="11/11/2022"
+            onChangeText={text =>handleChange(text,"startdate")}
             style={styles.content_Container}
           />
         </View>
@@ -42,6 +79,7 @@ export default function Applyleave() {
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="2 Days"
+            onChangeText={text =>handleChange(text,"duration")}
             style={styles.content_Container}
           />
         </View>
@@ -56,6 +94,7 @@ export default function Applyleave() {
           <TextInput
             placeholder="Yes"
             style={styles.content_Container}
+            onChangeText={text =>handleChange(text,"overseas")}
           />
         </View>
 
@@ -70,6 +109,7 @@ export default function Applyleave() {
           <TextInput
             placeholder="Malaysia"
             style={styles.content_Container}
+            onChangeText={text =>handleChange(text,"country")}
           />
         </View>
 
@@ -85,8 +125,16 @@ export default function Applyleave() {
           }
           <TextInput
             style={styles.content_Container_remarks}
+            onChangeText={text =>handleChange(text,"remarks")}
           />
         </View>
+        <TouchableOpacity
+                //onPress={handleSignUp}
+                onPress={handleSubmit}
+                style={[styles.button, styles.buttonOutline]}
+            >
+                <Text style={styles.buttonOutlineText}>Submit</Text>
+            </TouchableOpacity>
       </KeyboardAvoidingView>
 
     </View>
@@ -97,9 +145,25 @@ export default function Applyleave() {
 
 
 
-
 const styles = StyleSheet.create({
-
+  buttonOutline: {
+    backgroundColor: 'white',
+    marginTop: 35,
+    borderColor: '#0782F9',
+    borderWidth: 2,
+  },
+  buttonOutlineText: {
+    color: '#0782F9',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+  button: {
+    backgroundColor: '#0782F9',
+    width: '30%',
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
   container1: {
     marginTop: 0,
     backgroundColor: '#F4FBFF'
@@ -193,11 +257,4 @@ const styles = StyleSheet.create({
     marginLeft: 50
 
   }
-
-
-
-});
-
-
-
-
+})

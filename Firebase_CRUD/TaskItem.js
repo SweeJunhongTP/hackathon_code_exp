@@ -1,13 +1,18 @@
 import Modal from "./Modal"
 import './taskItem.css'
 
-function TaskItem({onClose, open, title, description}) {
+function TaskItem({onClose, open, startdate, remarks,duration,overseas,country}) {
 
   return (
-    <Modal modalLable='Task Item' onClose={onClose} open={open}>
+    <Modal modalLable='Applied Leave' onClose={onClose} open={open}>
       <div className='taskItem'>
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h2>Applying for :{startdate}</h2>
+        <p>Duration: {duration}</p>
+        <p>Overseas": {overseas}</p>
+        <p>Country?:{country}</p>
+        <p>Remarks: {remarks}</p>
+      
+        
       </div>
     </Modal>
   )

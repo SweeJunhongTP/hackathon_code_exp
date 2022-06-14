@@ -4,7 +4,6 @@ import { TextInput, TouchableOpacity } from 'react-native-web'
 import {auth, db} from '../../firebase'
 import 'firebase/compat/firestore';
 import { doc, setDoc } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/core'
 export default function SignUp() {
    
@@ -25,31 +24,11 @@ export default function SignUp() {
     })
     const navigation = useNavigation()
     const Register=()=> {
-        // const myDoc = doc(db,"Users","MyDoc")
-        // const DocData ={
-        //     "name":"testuser",
-        //     "role" :"test"
-        // }
-        
-        // setDoc(myDoc,DocData).then(()=>{
-        //     alert("document added successfully")
-        // })
-        // .catch((error)=>{
-        //     alert(error.message)
-        // })
+
         const {email, password,confirmPwd,fullName,role} = values
     
         if (password == confirmPwd){
             auth.createUserWithEmailAndPassword(email, password)
-            //   .then(()=>{
-            //     console.log(auth.currentUser.uid);
-            //     db.collection("Users").doc(auth.currentUser.uid).set({
-            //         uid: auth.currentUser.uid,
-            //         fullName,
-            //         role,
-            //         email
-            //     })
-            //   })
             .then(()=>{
                 setDoc(doc(db, "Users",auth.currentUser.uid),{
                     uid: auth.currentUser.uid,
