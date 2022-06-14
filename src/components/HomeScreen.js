@@ -66,7 +66,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => navigation.navigate('View Leave')}>
-                <Text style={styles.buttonText}>view status</Text>
+                <Text style={styles.buttonText}>Leave Application Status</Text>
             </TouchableOpacity>
            
                     {showResults ?(
