@@ -73,7 +73,7 @@ const [showResults, setShowResults] = React.useState(false)
 
        
       <div className='task__body'>
-        <h2>Apply for (date): {startdate}</h2>
+        <h2>Applying for {startdate} : </h2>
         <p>Remarks: {remarks}</p>
         <div className='task__buttons'>
           <button 
