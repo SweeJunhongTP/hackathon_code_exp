@@ -54,7 +54,10 @@ export default function HomeScreen() {
             <View>
                 <Text style={styles.welcome}> Welcome to Smart RO!</Text>
             </View>
-
+            <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate('Announcement')}>
+                <Text style={styles.buttonText}>Annoucements</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => navigation.navigate('View Calendar')}>
                 <Text style={styles.buttonText}>View Calendar</Text>

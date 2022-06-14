@@ -15,6 +15,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import TaskManager from './Firebase_CRUD/TaskManager'
 import ViewApplicationStatus from './src/components/ViewApplicationStatus';
+import Amanager from './src/components/annoucement/Amanager';
 
 
 
@@ -30,6 +31,17 @@ export default function App() {
       }}>
         
         <Stack.Screen name="Login" component={LoginScreen}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
+          <Stack.Screen name="Announcement" component={Amanager}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
