@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import './viewAppstatus.css'
-import Task from '../../Firebase_CRUD/Task'
+//import Task from '../../Firebase_CRUD/Task'
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../../firebase'

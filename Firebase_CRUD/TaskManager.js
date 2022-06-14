@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../firebase'
 import { StyleSheet } from 'react-native-web'
-import style from './taskManager.css';
+//import style from './taskManager.css';
 
 function TaskManager() {
 

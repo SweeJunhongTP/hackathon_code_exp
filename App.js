@@ -14,8 +14,8 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import TaskManager from './Firebase_CRUD/TaskManager'
-
-
+import ViewApplicationStatus from './src/components/ViewApplicationStatus';
+import Amanager from './src/components/annoucement/Amanager';
 import CommanderRegiser from './src/components/Comander/CommanderRegister';
 import CommanderDashboard from './src/components/Comander/CommanderDashboard';
 import CommanderLogin from './src/components/Comander/CommanderLogin';
@@ -97,7 +97,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-                {/* <Stack.Screen name="Leave Application Status" component={ViewApplicationStatus}
+                <Stack.Screen name="Leave Application Status" component={ViewApplicationStatus}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
@@ -107,7 +107,7 @@ export default function App() {
             fontWeight: 'bold',
             fontSize: 24
           },
-        }} /> */}
+        }} />
 
 
         <Stack.Screen name="Commander Register" component={CommanderRegiser}
