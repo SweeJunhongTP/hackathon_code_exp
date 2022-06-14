@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import './announcement.css'
 import {View, StyleSheet } from 'react-native'
+=======
+//import './announcement.css'
+import {View } from 'react-native'
+>>>>>>> parent of 7108c83 (debug)
 import React ,{useState,useEffect} from 'react'
 import AnnouncementItem from './AnnouncementItem'
 import { doc, updateDoc, deleteDoc, getDoc} from "firebase/firestore";

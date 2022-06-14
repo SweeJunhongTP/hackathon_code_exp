@@ -33,7 +33,7 @@
     background-color: hsl(210, 12%, 15%);
   }
   
-  .viewApplication__task{
+  .viewApplication__container{
     display: flex;
     flex-direction: column;
     gap: 20px;

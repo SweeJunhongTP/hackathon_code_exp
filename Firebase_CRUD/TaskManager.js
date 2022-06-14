@@ -4,17 +4,9 @@ import { useState, useEffect } from 'react'
 import { StyleSheet} from 'react-native'
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../firebase'
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-import { StyleSheet } from 'react-native-web'
->>>>>>> parent of 00f4c80 (error build)
 import  './taskManager.css';
-=======
-import { StyleSheet } from 'react-native-web'
-// import  './taskManager.css';
->>>>>>> da4b1c9d76a6cc4730e4c6ca65c79ece739cd778
+
+
 
 function TaskManager() {
 
@@ -35,10 +27,14 @@ function TaskManager() {
   }, [])
 
   return (
-    <div style={styles.taskManager}>
-      <div style={styles.taskManager__container}>
 
-        <div style={styles.taskManager__tasks}>
+    <div className='taskManager'>
+      <div 
+      className='taskManager__container'>
+
+        <div 
+        className='taskManager__tasks'>
+
 
           {tasks.map((task) => (
             <Task

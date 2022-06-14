@@ -1,7 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, {useState, useEffect} from 'react'
+<<<<<<< HEAD
 // import './viewAppstatus.css'
 import Task from '../../Firebase_CRUD/Task'
+=======
+import './viewAppstatus.css'
+//import Task from '../../Firebase_CRUD/Task'
+>>>>>>> parent of 7108c83 (debug)
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../../firebase'
@@ -23,10 +28,17 @@ export default function ViewApplicationStatus() {
     }, [])
   
     return (
+<<<<<<< HEAD
       <div style={styles.viewApplication}>
         <div style={styles.viewApplication__container}>
   
           <div style={styles.viewApplication__task}>
+=======
+      <div className='taskManager'>
+        <div className='taskManager__container'>
+  
+          <div className='taskManager__tasks'>
+>>>>>>> parent of 7108c83 (debug)
   
             {tasks.map((task) => (
               <Task
