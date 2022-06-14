@@ -31,10 +31,31 @@ export default function LoginScreen() {
     <KeyboardAvoidingView
       style={styles.container}
       behavior="padding">
-      <View>
-        < Image
-          style={{ width: 300, height: 200, borderRadius: 10 }}
-          source={require('../../assets/cat_status_update.png')} />
+      <View style={styles.catcontainer}>
+        <Text style={styles.cat}>
+          CAT STATUS UPDATE
+        </Text>
+        <Text style={styles.catcontent}>
+        CAT 1:
+        </Text>
+        <Text style={styles.catcontent}>
+        (0720-0900)
+        </Text>
+        <Text style={styles.catcontent}>
+          1N,1S,L1,L2,L3,L4,02,3S,3N,
+        </Text>
+        <Text style={styles.catcontent}>
+        04,05,06,07,8N,8S,09,14
+        </Text>
+        <Text style={styles.catcontent}>
+        (0740-0900)
+        </Text>
+        <Text style={styles.catcontent}>
+        10N,10S,11W,11E,12,13N,13S,
+        </Text>
+        <Text style={styles.catcontent}>
+        16N,16S,17,18W,18E,19N,19S
+        </Text>
       </View>
 
       <View style={styles.inputContainer}>
@@ -79,8 +100,35 @@ export default function LoginScreen() {
 
 
 const styles = StyleSheet.create({
+  catcontainer: {
+    backgroundColor: '#2c3b6a',
+    borderRadius: 10,
+    opacity: .8
+  },
+    cat: {
+    color: '#7185b7',
+    fontWeight: '1000',
+    fontSize: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 50,
+    borderRadius: 15,
+    marginRight: 50,
+    marginTop: 15,
+    marginBottom: 25
+  },
+  catcontent: {
+    color: '#d9d9d9',
+    fontWeight: 500,
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent:'center',
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 5
+  },
   container1: {
-    wdith: 250,
+    width: 250,
     height: 250
   },
   container: {

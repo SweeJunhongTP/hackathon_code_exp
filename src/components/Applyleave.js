@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     marginTop: 35,
     borderColor: '#0782F9',
     borderWidth: 2,
-    marginLeft: 180
+    marginLeft: 145
   },
   buttonOutlineText: {
     color: '#0782F9',
