@@ -50,7 +50,7 @@ const ViewCalendarScreen = () => {
                 alignItems: 'center',
               }}>
               <Text>{item.name}</Text>
-              <Avatar.Text label="NS" />
+              
             </View>
           </Card.Content>
         </Card>
