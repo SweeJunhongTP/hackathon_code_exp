@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, {useState, useEffect} from 'react'
-import './viewAppstatus.css'
+// import './viewAppstatus.css'
 import Task from '../../Firebase_CRUD/Task'
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
@@ -23,10 +23,10 @@ export default function ViewApplicationStatus() {
     }, [])
   
     return (
-      <div className='viewApplication'>
-        <div className='viewApplication__container'>
+      <div style={styles.viewApplication}>
+        <div style={styles.viewApplication__container}>
   
-          <div className='viewApplication__task'>
+          <div style={styles.viewApplication__task}>
   
             {tasks.map((task) => (
               <Task
@@ -48,3 +48,26 @@ export default function ViewApplicationStatus() {
       </div>
     )
 }
+
+const styles = StyleSheet.create({
+  viewApplication: {
+    padding: "25px 20px",
+    backgroundColor: "hsl(210, 12%, 15%)",
+    color: "white",
+    fontSize: "28px",
+    fontFamily: "cursive"
+  },
+  viewApplication__container:{
+    width: "95%",
+    margin: "50px auto 0 auto",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column"
+  },
+  viewApplication__task:{
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    marginTop: "20px"
+  }
+})
