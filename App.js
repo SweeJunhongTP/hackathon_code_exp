@@ -83,7 +83,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="firebaseCRUD" component={TaskManager}
+        <Stack.Screen name="Leave Approval" component={TaskManager}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
@@ -94,17 +94,7 @@ export default function App() {
             fontSize: 24
           },
         }} />
-        <Stack.Screen name="Leave Approval" component={ApproveLeave}
-        options = {{
-          headerStyle: {
-            backgroundColor: '#75C6EE',
-          },
-          headerTintColor: 'white',
-          headerTitleStyle:{
-            fontWeight: 'bold',
-            fontSize: 24
-          },
-        }} />
+
         <Stack.Screen name="SignUp" component={SignUp}
         options = {{
           headerStyle: {

@@ -141,11 +141,6 @@ return (
             </TouchableOpacity>
       </KeyboardAvoidingView>
 
-      <TouchableOpacity style={styles.buttonsignout}
-        onPress={() => navigation.navigate('HomeScreen')}>
-        <Text style={styles.signoutText}>Submit</Text>
-      </TouchableOpacity>
-
     </View>
 
   )
@@ -160,6 +155,7 @@ const styles = StyleSheet.create({
     marginTop: 35,
     borderColor: '#0782F9',
     borderWidth: 2,
+    marginLeft: 180
   },
   buttonOutlineText: {
     color: '#0782F9',

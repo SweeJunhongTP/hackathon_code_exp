@@ -25,7 +25,6 @@ function TaskManager() {
 
   return (
     <div className='taskManager'>
-      <header>Apply for leave</header>
       <div className='taskManager__container'>
 
         <div className='taskManager__tasks'>

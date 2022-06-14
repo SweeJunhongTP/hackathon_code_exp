@@ -68,7 +68,7 @@ export default function HomeScreen() {
            
                     {showResults ?(
                          <TouchableOpacity style={styles.button}
-                         onPress={() => navigation.navigate('firebaseCRUD')}>
+                         onPress={() => navigation.navigate('Leave Approval')}>
                          <Text style={styles.buttonText}>Approve Leave</Text>
                          </TouchableOpacity>
                     ):null}
