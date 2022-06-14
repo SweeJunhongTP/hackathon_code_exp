@@ -65,11 +65,9 @@ export default function HomeScreen() {
                 <Text style={styles.buttonText}>Apply for Leave</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
-                onPress={() => navigation.navigate('View Leave')}>
+                onPress={() => navigation.navigate('Leave Application Status')}>
                 <Text style={styles.buttonText}>Leave Application Status</Text>
             </TouchableOpacity>
-           
-                   
            
 
             <TouchableOpacity style={styles.buttonsignout}
