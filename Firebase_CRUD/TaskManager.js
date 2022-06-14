@@ -1,11 +1,11 @@
 
 import Task from './Task'
 import { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet} from 'react-native'
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../firebase'
 import { StyleSheet } from 'react-native-web'
-import  './taskManager.css';
+// import  './taskManager.css';
 
 function TaskManager() {
 
@@ -26,10 +26,10 @@ function TaskManager() {
   }, [])
 
   return (
-    <div className='taskManager'>
-      <div className='taskManager__container'>
+    <div style={styles.taskManager}>
+      <div style={styles.taskManager__container}>
 
-        <div className='taskManager__tasks'>
+        <div style={styles.taskManager__tasks}>
 
           {tasks.map((task) => (
             <Task
@@ -53,3 +53,26 @@ function TaskManager() {
 }
 
 export default TaskManager
+
+const styles = StyleSheet.create({
+    taskManager: {
+      padding: "25px 20px",
+      backgroundColor: "hsl(210, 12%, 15%)",
+      color: "white",
+      fontSize: "28px",
+      fontFamily: "cursive"
+    },
+    taskManager__container:{
+      width: "95%",
+      margin: "50px auto 0 auto",
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column"
+    },
+    taskManager__tasks:{
+      display: "flex",
+      flexDirection: "column",
+      gap: "20px",
+      marginTop: "20px"
+    }
+  })

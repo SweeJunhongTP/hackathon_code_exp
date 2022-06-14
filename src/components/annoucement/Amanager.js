@@ -1,4 +1,5 @@
-import './Amanager.css'
+// import './Amanager.css'
+import { StyleSheet } from 'react-native'
 import Announcement from './Announcement'
 import AddAnnoucment from './AddA'
 import react ,{ useState, useEffect } from 'react'
@@ -47,8 +48,8 @@ const [showResults, setShowResults] = useState(false)
   }, [])
 
   return (
-    <div className='taskManager'>
-      <div className='taskManager__container'>
+    <div style={styles.taskManager}>
+      <div style={styles.taskManager__container}>
       {showResults ? (
            <button 
           onClick={() => setOpenAddModal(true)}>
@@ -57,7 +58,7 @@ const [showResults, setShowResults] = useState(false)
 
         ) : null}
        
-        <div className='taskManager__tasks'>
+        <div style={styles.taskManager__tasks}>
 
           {tasks.map((task) => (
             <Announcement
@@ -80,3 +81,26 @@ const [showResults, setShowResults] = useState(false)
 }
 
 export default Amanager
+
+const styles = StyleSheet.create({
+  taskManager: {
+    padding: "25px 20px",
+    backgroundColor: "hsl(210, 12%, 15%)",
+    color: "white",
+    fontSize: "28px",
+    fontFamily: "cursive"
+  },
+  taskManager__container:{
+    width: "95%",
+    margin: "50px auto 0 auto",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column"
+  },
+  taskManager__tasks:{
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+    marginTop: "20px"
+  }
+})
