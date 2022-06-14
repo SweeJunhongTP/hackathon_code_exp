@@ -1,6 +1,6 @@
-import './modal.css'
+import './Amodal.css'
 
-function Modal({open, modalLable, children, custom_modal, onClose}) {
+function AModal({open, modalLable, children, custom_modal, onClose}) {
 
   const handleClose = (e) => {
     if(e.target.className === 'modalContainer'){
@@ -25,4 +25,4 @@ function Modal({open, modalLable, children, custom_modal, onClose}) {
   return null
 }
 
-export default Modal
+export default AModal

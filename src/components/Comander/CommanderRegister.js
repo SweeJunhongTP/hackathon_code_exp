@@ -24,7 +24,7 @@ export default function CommanderRegiser() {
     const navigation = useNavigation()
     const Register=()=> {
 
-        const {email, password,confirmPwd,fullName} = values
+        const {email, password,confirmPwd,fullName,role} = values
     
         if (password == confirmPwd){
             auth.createUserWithEmailAndPassword(email, password)
