@@ -19,7 +19,6 @@ export default function CommanderRegiser() {
         email:'',
         password:'',
         confirmPwd:'',
-        role:'',
         fullName:'',
     })
     const navigation = useNavigation()
@@ -33,7 +32,7 @@ export default function CommanderRegiser() {
                 setDoc(doc(db, "Users",auth.currentUser.uid),{
                     uid: auth.currentUser.uid,
                     fullName,
-                    role,
+                    role:'Commander',
                     email
                 })
                 navigation.replace("Commander Dashboard")
@@ -64,14 +63,7 @@ export default function CommanderRegiser() {
                     style={styles.input}
                 />
             </View>
-            <View style={styles.container}>
-                <TextInput
-                    placeholder="Role"
-                 
-                    onChangeText={text => handleChange(text,"role")}
-                    style={styles.input}
-                />
-            </View>
+          
             <View style={styles.container}>
                 <TextInput
                     placeholder="Enter New Password"

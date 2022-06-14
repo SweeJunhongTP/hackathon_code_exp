@@ -32,7 +32,7 @@ export default function SignUp() {
                 setDoc(doc(db, "Users",auth.currentUser.uid),{
                     uid: auth.currentUser.uid,
                     fullName,
-                    role:'Commander',
+                    role:'User',
                     email
                 })
                 navigation.replace("Dashboard")
