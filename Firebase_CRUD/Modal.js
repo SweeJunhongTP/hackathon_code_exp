@@ -1,6 +1,6 @@
 
 import './modal.css'
-import {StyleSheet}from 'react-native'
+
 
 function Modal({open, modalLable, children, custom_modal, onClose}) {
 
@@ -15,8 +15,7 @@ function Modal({open, modalLable, children, custom_modal, onClose}) {
     return (
 
       <div className='modalContainer' onClick={handleClose}>
-        {/* <div className= {`modal ${custom_modal}`}> */}
-        <div>
+        <div className= {`modal ${custom_modal}`}>
           <div className='modal__head'>
 
             <h2>{modalLable}</h2>

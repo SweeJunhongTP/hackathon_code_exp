@@ -1,7 +1,4 @@
 
-
-
-
 import './Amanager.css'
 import Announcement from './Announcement'
 import AddAnnoucment from './AddA'

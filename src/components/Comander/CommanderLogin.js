@@ -19,14 +19,14 @@ export default function CommanderLogin() {
         .catch(error => alert(error.message))
     }
     const navigation = useNavigation()
-    useEffect(()=>{
-       const unsubscribe = auth.onAuthStateChanged(user=>{
-            if(user.role == 'Commander'){
-                navigation.replace("Commander Dashboard")
-            }
-        })
-        return unsubscribe
-    },[])
+    // useEffect(()=>{
+    //    const unsubscribe = auth.onAuthStateChanged(user=>{
+    //         if(user.role == 'Commander'){
+    //             navigation.replace("Commander Dashboard")
+    //         }
+    //     })
+    //     return unsubscribe
+    // },[])
     return (
 
         <KeyboardAvoidingView
@@ -104,7 +104,7 @@ export default function CommanderLogin() {
       paddingHorizontal: 15,
       paddingVertical: 10,
       borderRadius: 10,
-       marginTop: 5,
+      //  marginTop: 5,
     },
     buttonContainer: {
       width: '60%',

@@ -5,7 +5,11 @@ import { StyleSheet} from 'react-native'
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
 import { db } from '../firebase'
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+import { StyleSheet } from 'react-native-web'
+>>>>>>> parent of 00f4c80 (error build)
 import  './taskManager.css';
 =======
 import { StyleSheet } from 'react-native-web'

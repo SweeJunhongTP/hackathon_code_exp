@@ -1,12 +1,9 @@
+import './Amodal.css'
 
-
-import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
-
-function AModal({open,modalLable,children, custom_modal, onClose}) {
+function AModal({open, modalLable, children, custom_modal, onClose}) {
 
   const handleClose = (e) => {
-    if(e.target.name === 'modalContainer'){
+    if(e.target.className === 'modalContainer'){
       onClose()
     }
     return null
@@ -14,83 +11,18 @@ function AModal({open,modalLable,children, custom_modal, onClose}) {
 
   if(open) {
     return (
-        <View style={styles.centeredView} name='modalContainer'>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Text style={styles.modalText}>{modalLable}</Text>
-                {children}
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={handleClose}
-                >
-                  <Text style={styles.textStyle}  onPress={onClose}>Close</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
-          <Pressable
-            style={[styles.button, styles.buttonOpen]}
-            onPress={() => setModalVisible(true)}
-          >
-            <Text style={styles.textStyle}>Show Modal</Text>
-          </Pressable>
-        </View>
-      )
+      <div className='modalContainer' onClick={handleClose}>
+        <div className= {`modal ${custom_modal}`}>
+          <div className='modal__head'>
+            <h2>{modalLable}</h2>
+            <span className='modal__close' onClick={onClose}>x</span>
+          </div>
+          {children}
+        </div>
+      </div>
+    )
   }
   return null
 }
 
 export default AModal
-
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center"
-  }
-});
