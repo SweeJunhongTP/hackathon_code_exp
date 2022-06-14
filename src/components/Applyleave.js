@@ -141,6 +141,11 @@ return (
             </TouchableOpacity>
       </KeyboardAvoidingView>
 
+      <TouchableOpacity style={styles.buttonsignout}
+        onPress={() => navigation.navigate('HomeScreen')}>
+        <Text style={styles.signoutText}>Submit</Text>
+      </TouchableOpacity>
+
     </View>
 
   )
@@ -181,48 +186,48 @@ const styles = StyleSheet.create({
   },
 
   leaveblank: {
-    fontSize: 10,
+    fontSize: 8,
     color: '#F4FBFF',
   },
 
 
   startdate: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500',
     color: '#000000',
-    marginLeft: 50,
+    marginLeft: 40,
   },
 
   duration: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500',
     color: '#000000',
     marginTop: 20,
-    marginLeft: 50,
+    marginLeft: 40,
   },
 
   overseas: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500',
     color: '#000000',
     marginTop: 20,
-    marginLeft: 50,
+    marginLeft: 40,
   },
 
   country: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500',
     color: '#000000',
     marginTop: 20,
-    marginLeft: 50,
+    marginLeft: 40,
   },
 
   remarks: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '500',
     color: '#000000',
     marginTop: 20,
-    marginLeft: 50,
+    marginLeft: 40,
   },
 
   inputContainer: {
@@ -231,7 +236,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     alignItems: 'left',
     height: 40,
-    marginLeft: 50
+    marginLeft: 40
   },
 
   content_Container: {
@@ -258,7 +263,23 @@ const styles = StyleSheet.create({
     marginTop: 4,
     alignItems: 'left',
     height: 170,
-    marginLeft: 50
+    marginLeft: 40
 
+  },
+  buttonsignout: {
+    backgroundColor: '#75C6EE',
+    width: '30%',
+    padding: 25,
+    borderRadius: 15,
+    alignContent: 'center',
+    marginLeft: 120,
+    marginTop: 40,
+  },
+  signoutText: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 16,
+    alignContent: 'center',
+    marginLeft: 10
   }
 })
