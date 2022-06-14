@@ -56,7 +56,11 @@ export default function HomeScreen() {
             </View>
             <TouchableOpacity style={styles.button}
                 onPress={() => navigation.navigate('Announcement')}>
-                <Text style={styles.buttonText}>Annoucements</Text>
+                <Text style={styles.buttonText}>AnnouncementList</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate('Modal')}>
+                <Text style={styles.buttonText}>sample modal</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => navigation.navigate('View Calendar')}>

@@ -3,7 +3,7 @@ import {useState} from 'react'
 import './addA.css'
 import { auth, db } from '../../../firebase'
 import {collection, addDoc, Timestamp} from 'firebase/firestore'
-
+import {StyleSheet}from 'react-native'
 function AddAnnoucment({onClose, open}) {
 
   const [message, setMessage] = useState('')
@@ -42,3 +42,8 @@ function AddAnnoucment({onClose, open}) {
 }
 
 export default AddAnnoucment
+
+const styles = StyleSheet.create({
+
+
+})

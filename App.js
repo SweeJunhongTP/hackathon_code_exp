@@ -19,7 +19,8 @@ import Amanager from './src/components/annoucement/Amanager';
 import CommanderRegiser from './src/components/Comander/CommanderRegister';
 import CommanderDashboard from './src/components/Comander/CommanderDashboard';
 import CommanderLogin from './src/components/Comander/CommanderLogin';
-
+import ModalExample from './src/components/Modalexample';
+import AnnouncementList from './src/components/Comander/AnnouncementFeature/AnnouncementList'
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -30,7 +31,17 @@ export default function App() {
         headerStyle: { elevation: 0 },
         cardStyle: { backgroundColor: '#F4FBFF'}
       }}>
-        
+            <Stack.Screen name="Announcement" component={AnnouncementList}
+        options = {{
+          headerStyle: {
+            backgroundColor: '#75C6EE',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 24
+          },
+        }} />
         <Stack.Screen name="Login" component={LoginScreen}
         options = {{
           headerStyle: {
@@ -42,7 +53,11 @@ export default function App() {
             fontSize: 24
           },
         }} />
-          <Stack.Screen name="Announcement" component={Amanager}
+
+
+       
+        
+        <Stack.Screen name="Modal" component={ModalExample}
         options = {{
           headerStyle: {
             backgroundColor: '#75C6EE',
