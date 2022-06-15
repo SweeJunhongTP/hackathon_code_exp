@@ -63,14 +63,7 @@ export default function SignUp() {
                     style={styles.input}
                 />
             </View>
-            <View style={styles.container}>
-                <TextInput
-                    placeholder="Role"
-                 
-                    onChangeText={text => handleChange(text,"role")}
-                    style={styles.input}
-                />
-            </View>
+
             <View style={styles.container}>
                 <TextInput
                     placeholder="Enter New Password"
