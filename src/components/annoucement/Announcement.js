@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import './announcement.css'
-import {View, StyleSheet } from 'react-native'
-=======
-//import './announcement.css'
 import {View } from 'react-native'
->>>>>>> parent of 7108c83 (debug)
 import React ,{useState,useEffect} from 'react'
 import AnnouncementItem from './AnnouncementItem'
 import { doc, updateDoc, deleteDoc, getDoc} from "firebase/firestore";
@@ -23,11 +17,11 @@ function Announcement({id, message, by, published}) {
     
   return (
     
-    <div style={styles.task_borderColor}>       
-      <div style={styles.task__body}>
+    <div className='task--borderColor'>       
+      <div className='task__body'>
         <h6>Published by: {by} : </h6>
         <p>Annoucement: {message}</p>
-        <div style={styles.task__buttons}>
+        <div className='task__buttons'>
           <button 
             onClick={() => setOpen({...open, view: true})}>
             View
@@ -51,21 +45,3 @@ function Announcement({id, message, by, published}) {
 }
 
 export default Announcement
-
-const styles = StyleSheet.create({
-  task__body:{
-    display: "flex", 
-    flexDirection: "column", 
-    flexGrow: 1 
-  },
-  task__buttons:{
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: "30px",
-    alignItems: "center"
-  },
-  task_borderColor:{
-    borderColor: "green",
-    boxShadow: "0 6px 18px -9px hsl(210, 15%, 65%)"
-  }
-})
