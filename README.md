@@ -6,6 +6,9 @@ Accessing this project through repository:
 First clone the project. In you command prompt run
 >git clone https://github.com/SweeJunhongTP/hackathon_code_exp.git
 
+Change directory to the project folder
+>cd hackathon_code_exp
+
 Install all the libraries and dependencies
 >npm install
 
