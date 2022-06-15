@@ -4,14 +4,14 @@ Brainhack 2022 CODE_EXP mobile app hackathon
 Accessing this project through repository:
 
 First clone the project. In you command prompt run
-_git clone https://github.com/SweeJunhongTP/hackathon_code_exp.git_
+>git clone https://github.com/SweeJunhongTP/hackathon_code_exp.git
 
 Install all the libraries and dependencies
-_npm install_
+>npm install
 
 Install Expo CLI
-_npm install -g expo-cli_
+>npm install -g expo-cli
 
 Run the project 
-_expo start_
+>expo start
 
