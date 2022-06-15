@@ -18,3 +18,4 @@ Install Expo CLI
 Run the project 
 >expo start
 
+Press w to start running on Web
